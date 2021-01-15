@@ -37,3 +37,6 @@ _install_soluble_if_not_present=true
     exit 1
   fi
 ) >&2
+
+# Check for hardcoded secrets in the source repository
+soluble secrets-scan
