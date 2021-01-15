@@ -1,46 +1,18 @@
 #!/bin/bash
 
-_install_soluble_if_not_present=true
+#
+# This git hook is derrived from the github.com/soluble-ai/githooks
+# repository and managed by the "soluble githook" command.
+#
+# Uncomment and/or modify the commands below.
+#
 
-# handle installing soluble
-(
-  if ! [[ -x "$(command -v soluble)" ]]; then
-    if [[${_install_soluble_if_not_present} == true ]]; then
-      echo "installing soluble..."
-      case ${OSTYPE} in
-        darwin*)
-          if [[ -x "$(command -v brew)" ]]; then
-            echo "brew found. Using brew..."
-            brew update
-            brew install soluble-ai/soluble/soluble-cli
-          fi
-          ;;
-        *)
-          if [[ -x "$(command -v curl)" ]]; then
-            curl https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh
-          elif [[ -x "$(command -v wget)" ]]; then
-            wget -O - https://raw.githubusercontent.com/soluble-ai/soluble-cli/master/linux-install.sh | sh
-          else
-            echo "neither curl nor wget are installed. Unable to download soluble. Aborting."
-            exit 1
-          fi
-          ;;
-      esac
-      if ! [[ -x "$(command -v soluble)" ]]; then
-        echo "failed to install soluble. Aborting."
-        exit 1
-      fi
-      echo "installed soluble"
-    fi
-    echo "soluble commad not present, and automatic installation not enabled. Aborting."
-    echo "Please install soluble"
-    exit 1
-  fi
-) >&2
 
 # Check for hardcoded secrets in the source repository
-soluble secrets-scan
+#soluble secrets-scan
 
+# scan IaC content, automatically detecting IaC type
 soluble auto-scan
+# ...or uncomment below to run particular scanners
 #soluble kubernetes-scan
 #soluble terraform-scan

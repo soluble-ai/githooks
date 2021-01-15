@@ -13,7 +13,7 @@ catnoshebang() {
 file="${dir}/../iac/pre-push"
 rm -f "${file}" || true
 touch "${file}"
-cat "${dir}/common/install.sh" >> "${file}"
+cat "${dir}/common/base.sh" >> "${file}"
 catnoshebang "${dir}/common/secrets.sh" >> "${file}"
 catnoshebang "${dir}/iac/iac-scan.sh" >> "${file}"
 chmod +x "${file}"

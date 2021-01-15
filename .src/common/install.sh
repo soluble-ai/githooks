@@ -1,8 +1,9 @@
 #!/bin/bash
 
-_install_soluble_if_not_present=true
+# Note: this script is explicitly NOT bundled into the githooks
 
-# handle installing soluble
+# Install the "soluble" command if not already installed.
+_install_soluble_if_not_present=true
 (
   if ! [[ -x "$(command -v soluble)" ]]; then
     if [[${_install_soluble_if_not_present} == true ]]; then
