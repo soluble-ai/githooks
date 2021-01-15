@@ -11,9 +11,9 @@
 # Check for hardcoded secrets in the source repository
 #soluble secrets-scan
 
-# scan application dependencies for vulnerable packages/libraries
+# Scan application dependencies for vulnerable packages/libraries
 #soluble dep-scan trivy
 #soluble dep-scan retirejs
 
-# scan (already built) container images
+# Scan (a built) container image
 #soluble image-scan --image myimage:latest
