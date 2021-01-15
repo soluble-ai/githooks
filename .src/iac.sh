@@ -9,8 +9,8 @@ catnoshebang() {
   done < "${catfile}"
 }
 
-# pre-commit
-file="${dir}/../iac/pre-commit"
+# pre-push
+file="${dir}/../iac/pre-push"
 rm -f "${file}" || true
 touch "${file}"
 cat "${dir}/common/install.sh" >> "${file}"
