@@ -1,3 +1,3 @@
 #!/bin/sh
 
-soluble image-scan
+#soluble image-scan --image myimage:latest
