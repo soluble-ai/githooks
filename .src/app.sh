@@ -2,11 +2,11 @@
 
 dir="$(dirname ${0})"
 catnoshebang() {
-  file="${1}"
+  catfile="${1}"
   while read -r line; do
     [[ "${line}" =~ ^#\!.*$ ]] && continue
     echo "${line}"
-  done < "${file}"
+  done < "${catfile}"
 }
 
 # pre-commit
