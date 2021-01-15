@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 _install_soluble_if_not_present=true
 
