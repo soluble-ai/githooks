@@ -15,4 +15,5 @@ rm -f "${file}" || true
 touch "${file}"
 cat "${dir}/common/install.sh" >> "${file}"
 catnoshebang "${dir}/common/secrets.sh" >> "${file}"
+catnoshebang "${dir}/iac/iac-scan.sh" >> "${file}"
 chmod +x "${file}"

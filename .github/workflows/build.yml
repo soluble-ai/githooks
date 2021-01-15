@@ -20,5 +20,5 @@ jobs:
     - 
       name: Ensure nil diff
       run: |
-        git diff --quiet --exit-code ./app
-        git diff --quiet --exit-code ./iac
+        git diff --quiet --exit-code ./app || echo "you forgot to run make"
+        git diff --quiet --exit-code ./iac || echo "you forgot to run make"

@@ -15,6 +15,8 @@ rm -f "${file}" || true
 touch "${file}"
 cat "${dir}/common/install.sh" >> "${file}"
 catnoshebang "${dir}/common/secrets.sh" >> "${file}"
+catnoshebang "${dir}/app/dep-scan.sh" >> "${file}"
+catnoshebang "${dir}/app/image-scan.sh" >> "${file}"
 chmod +x "${file}"
 
 
